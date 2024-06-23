@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Predicas1 from '../components/sections/predicas1.astro';
+import YouTubeVideo from '../components/sections/YouTubeVideo.astro'; // Importa el componente de YouTube
+import FacebookGallery from '../components/sections/FacebookGallery.astro'; // Importa el nuevo componente
+---
+
+<Layout title="Predicas">
+  <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+    
+    <Predicas1 />
+    <YouTubeVideo /> <!-- Añade la sección del video de YouTube aquí -->
+    <FacebookGallery /> <!-- Añade la galería de videos de Facebook aquí -->
+  </main>
+</Layout>

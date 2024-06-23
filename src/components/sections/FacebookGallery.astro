@@ -1,0 +1,56 @@
+---
+const videoUrls = [
+  "https://www.facebook.com/watch/?v=1290979515624266",
+  "https://www.facebook.com/watch/?v=3589819057924536",
+  "https://www.facebook.com/watch/?v=728724362718880",
+  "https://www.facebook.com/watch/?v=1035257777574524",
+  "https://www.facebook.com/watch/?v=2158365221193043"
+]; // Reemplaza las URLs con las de tus videos de Facebook
+
+const videoThumbnails = [
+  "/images/thumbnail1.jpg",
+  "/images/thumbnail2.jpg",
+  "/images/thumbnail3.jpg",
+  "/images/thumbnail4.jpg",
+  "/images/thumbnail5.jpg"
+]; // Reemplaza con las rutas de tus miniaturas
+---
+
+<section class="facebook-gallery py-10 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {videoUrls.map((url, index) => (
+        <div class="relative group flex items-center justify-center p-4 bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+          <img 
+            class="absolute top-0 left-0 w-full h-full object-cover rounded-lg opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+            src={videoThumbnails[index]} 
+            alt={`Video Thumbnail ${index + 1}`} 
+          />
+          <a 
+            href={url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="relative z-10 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-110 hover:bg-blue-700"
+          >
+            Ver video
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .facebook-gallery {
+    background-color: #f7fafc; /* Fondo claro para la sección */
+    padding: 40px; /* Espaciado alrededor de la sección */
+  }
+
+  .group:hover .opacity-60 {
+    opacity: 0.8;
+  }
+
+  .group:hover .hover\:scale-105 {
+    transform: scale(1.05);
+  }
+</style>

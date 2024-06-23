@@ -1,0 +1,35 @@
+---
+const videoId = "PIUKUhvChsc"; // ID del video de YouTube proporcionado
+---
+<section class="youtube-video-container py-10 flex justify-center items-center bg-gray-100">
+  <div class="video-wrapper relative shadow-lg rounded-lg overflow-hidden">
+    <iframe 
+      class="video-iframe absolute top-0 left-0 w-full h-full" 
+      src={`https://www.youtube.com/embed/${videoId}`} 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<style>
+  .youtube-video-container {
+    background-color: #f7fafc; /* Fondo claro para la sección */
+    padding: 40px; /* Espaciado alrededor de la sección */
+  }
+
+  .video-wrapper {
+    width: 100%;
+    max-width: 800px; /* Ancho máximo del contenedor de video */
+    aspect-ratio: 16/9; /* Proporción de aspecto del video */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Para que los bordes redondeados se apliquen correctamente */
+  }
+
+  .video-iframe {
+    border: none; /* Sin bordes */
+  }
+</style>
